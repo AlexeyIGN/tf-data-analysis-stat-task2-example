@@ -19,5 +19,5 @@ def solution(p: float, x: np.array) -> tuple:
     D = D/len(x)
     D = D/len(x)
     scale = np.sqrt(D) / np.sqrt(len(x))
-    return loc - scale * dlaplace.ppf(1 - alpha / 2), \
-           loc - scale * dlaplace.ppf(alpha / 2)
+    return (2 / 33**2)*loc - (2 / 33**2)*scale * dlaplace.ppf(1 - alpha / 2), \
+           (2 / 33**2)*loc - (2 / 33**2)*scale * dlaplace.ppf(alpha / 2)
