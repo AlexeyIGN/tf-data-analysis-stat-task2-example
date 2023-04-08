@@ -15,9 +15,10 @@ def solution(p: float, x: np.array) -> tuple:
     temp = np.zeros(len(x))
     for i in range(len(x)):
         temp[i] = x[i] - loc
-    D = 2*(np.sum(temp))**2
-    D = D/len(x)
-    D = D/len(x)
-    scale = np.sqrt(D) / np.sqrt(len(x))
+    #D = 2*(np.sum(temp))**2
+    #D = D/len(x)
+    #D = D/len(x)
+    #scale = np.sqrt(D) / np.sqrt(len(x))
+    scale = np.sqrt(2)*np.sum(temp) / np.sqrt(len(x))
     return (2 / 33**2)*loc - (2 / 33**2)*scale * laplace.ppf(1 - alpha / 2), \
            (2 / 33**2)*loc - (2 / 33**2)*scale * laplace.ppf(alpha / 2)
